@@ -1,2 +1,2 @@
 # DataStructure
-the proceed of learning data structure
+the process of learning data structure
