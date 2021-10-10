@@ -5,7 +5,7 @@
 #define OVERFLOW -2
 #define MAXSIZE 100
 
-typedef int Statue;
+typedef int Status;
 
 class ElemType
 {
@@ -61,14 +61,16 @@ typedef struct LNode
 	ElemType data;
 	struct LNode* next;
 }LNode, * LinkList;
+
 //链表初始化
-Statue InitList_L(LinkList& L)
+Status InitList_L(LinkList& L)
 {
 	L = new LNode;
 	//L = (LNode *)malloc(sizeof(LNode));
 	L->next = NULL;
 	return OK;
 }
+
 //判断链表是否为空
 bool ListEmpty_L(LinkList L)
 {
@@ -77,8 +79,9 @@ bool ListEmpty_L(LinkList L)
 	else
 		return 0;
 }
+
 //销毁链表
-Statue DestroyList_L(LinkList& L)
+Status DestroyList_L(LinkList& L)
 {
 	LNode* p;
 	while (L)
@@ -91,7 +94,7 @@ Statue DestroyList_L(LinkList& L)
 }
 
 //清空链表
-Statue ClearList_L(LinkList& L)
+Status ClearList_L(LinkList& L)
 {
 	LNode* p, * q;
 	q = L->next;
@@ -119,7 +122,7 @@ int ListLength_L(LinkList L)
 }
 
 //链表取值
-Statue GetElem_L(LinkList L, int i, ElemType& e)
+Status GetElem_L(LinkList L, int i, ElemType& e)
 {
 	LNode* p = L->next;
 	int n = 1;
@@ -136,7 +139,6 @@ Statue GetElem_L(LinkList L, int i, ElemType& e)
 		return OK;
 	}
 }
-
 //链表查找
 LNode* LocateElem_L(LinkList L, ElemType e)
 {
@@ -149,7 +151,7 @@ LNode* LocateElem_L(LinkList L, ElemType e)
 }
 
 //链表插入
-Statue InsertElem_L(LinkList& L, int i, ElemType e)
+Status InsertElem_L(LinkList& L, int i, ElemType e)
 {
 	int n = 0;
 	LNode* p = L;
@@ -171,7 +173,7 @@ Statue InsertElem_L(LinkList& L, int i, ElemType e)
 }
 
 //链表删除
-Statue DeleteElem_L(LinkList& L, int i)
+Status DeleteElem_L(LinkList& L, int i)
 {
 	int n = 0;
 	LNode* p = L;
@@ -192,7 +194,7 @@ Statue DeleteElem_L(LinkList& L, int i)
 }
 
 //输出链表
-Statue putList_L(LinkList L)
+Status putList_L(LinkList L)
 {
 	LNode* p = L;
 	while (p->next)
