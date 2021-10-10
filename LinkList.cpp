@@ -242,21 +242,26 @@ void CreateList_R(LinkList& L, int n)
 //测试
 int main()
 {
+	using namespace std;
 	LinkList L;
 	InitList_L(L);//初始化链表
+	cout << "依次插入三个元素" << endl;
 	InsertElem_L(L, 1, ElemType("zhangsan", 17));//插入
 	InsertElem_L(L, 2, ElemType("lisi", 18));//插入
 	InsertElem_L(L, 1, ElemType("wangwu", 16));//插入
 	putList_L(L);//输出测试结果
+	cout << "删除第一个元素" << endl;
 	DeleteElem_L(L, 1);//删除
+	cout << "测试删除结果" << endl;
 	putList_L(L);//输出测试结果
 	ElemType e;
 	GetElem_L(L, 1, e);//取值
-	std::cout << "My name is " << e.getName()
-		<< ". I'm " << e.getAge() << " years old." << std::endl;//测试取值函数
+	cout << "取出第一个元素的值" << endl;
+	cout << "My name is " << e.getName()
+		<< ". I'm " << e.getAge() << " years old." << endl;//测试取值函数
 	if (ListEmpty_L(L))//判断链表是否为空
 	{
-		std::cout << "the length is " << ListLength_L(L) << ".\n";//不为空则输出链表长度
+		cout << "\nthe length is " << ListLength_L(L) << ".\n";//不为空则输出链表长度
 	}
 	ClearList_L(L);//清空链表
 	DestroyList_L(L);//销毁链表
