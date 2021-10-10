@@ -70,7 +70,7 @@ Statue InitList_L(LinkList& L)
 	return OK;
 }
 //判断链表是否为空
-bool ListEmpty_L(LinkList& L)
+bool ListEmpty_L(LinkList L)
 {
 	if (L->next)
 		return 1;
