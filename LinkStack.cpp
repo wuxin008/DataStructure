@@ -92,7 +92,7 @@ Status Pop_L(LinkStack& S, SElemType& se)
 	return OK;
 }
 
-Status StackTraverse(LinkStack S)
+Status StackTraverse_L(LinkStack S)
 {
 	if (S->next)
 		StackTraverse(S->next);
@@ -109,24 +109,24 @@ int main()
 	LinkStack S;
 	SElemType se;
 	InitStack_L(S);
-	cout << "µ±Ç°Õ»µÄ³¤¶ÈÎª" << StackLength_L(S) << endl;
+	cout << "å½“å‰æ ˆçš„é•¿åº¦ä¸º" << StackLength_L(S) << endl;
 	Push_L(S, { "zhangsan", 11 });
 	Push_L(S, { "lisi", 12 });
 	Push_L(S, { "wangwu", 13 });
-	cout << "ÏÖÔÚ¿ªÊ¼±éÀúÕ»\n";
-	StackTraverse(S);
-	cout << "µ¯³ö×îºóÒ»¸öÔªËØ²¢Êä³ö£º\n";
+	cout << "çŽ°åœ¨å¼€å§‹éåŽ†æ ˆ\n";
+	StackTraverse_L(S);
+	cout << "å¼¹å‡ºæœ€åŽä¸€ä¸ªå…ƒç´ å¹¶è¾“å‡ºï¼š\n";
 	Pop_L(S, se);
 	std::cout << "My name is " << se.name
 		<< ". And I'm " << se.age
 		<< " years old." << std::endl;
-	cout << "ÏÖÔÚ¿ªÊ¼±éÀúÕ»\n";
-	StackTraverse(S);
-	cout << "µ±Ç°Õ»µÄ³¤¶ÈÎª" << StackLength_L(S) << endl;
-	cout << "µ±Ç°Õ»ÊÇ·ñÎª¿Õ" << StackEmpty_L(S) << endl;
-	cout << "ÏÖÔÚ¿ªÊ¼Çå¿ÕÕ»\n";
+	cout << "çŽ°åœ¨å¼€å§‹éåŽ†æ ˆ\n";
+	StackTraverse_L(S);
+	cout << "å½“å‰æ ˆçš„é•¿åº¦ä¸º" << StackLength_L(S) << endl;
+	cout << "å½“å‰æ ˆæ˜¯å¦ä¸ºç©º" << StackEmpty_L(S) << endl;
+	cout << "çŽ°åœ¨å¼€å§‹æ¸…ç©ºæ ˆ\n";
 	ClearStack_L(S);
-	cout << "µ±Ç°Õ»µÄ³¤¶ÈÎª" << StackLength_L(S) << endl;
+	cout << "å½“å‰æ ˆçš„é•¿åº¦ä¸º" << StackLength_L(S) << endl;
 	DestroyStack_L(S);
 	return 0;
 }
