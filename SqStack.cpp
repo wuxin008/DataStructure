@@ -49,7 +49,7 @@ Status ClearStack(SqStack& S)
 //判断栈是否为空
 bool StackEmpty(SqStack S)
 {
-	if (S.base)
+	if (S.base != S.top)
 		return false;
 	else
 		return true;
